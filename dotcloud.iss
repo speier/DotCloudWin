@@ -18,6 +18,12 @@ Name: "{code:UserDir}\.dotcloud"
 [UninstallDelete]
 Type: filesandordirs; Name: "{code:UserDir}\.dotcloud"
 
+[Registry]
+Root: HKLM; Subkey: "SYSTEM\CurrentControlSet\Control\Session Manager\Environment"; ValueType: expandsz; ValueName: "HOME"; ValueData: "{code:UserDir}"
+
+[Registry]
+Root: HKLM; Subkey: "SYSTEM\CurrentControlSet\Control\Session Manager\Environment"; ValueType: expandsz; ValueName: "CYGWIN"; ValueData: "nodosfilewarning"
+
 [Code]
 function UserDir(Param: String): String;
 begin
