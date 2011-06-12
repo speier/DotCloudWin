@@ -39,20 +39,35 @@ end;
 function NextButtonClick(CurrentPageID: Integer) : Boolean;
 var
   ResultCode: Integer;
+  StrApiKey: String;
+  StrTemp: String;
   DotCloudConfPath: String;
 begin
   Result := True;
-  if CurrentPageID = wpFinished then
+  if CurrentPageID = apiKeyPage.ID then
   begin
-    if apiKeyPage.Values[0] <> '' then
+    StrApiKey := Trim(apiKeyPage.Values[0]);
+    if StrApiKey <> '' then
+    begin
+      if (Pos(':', StrApiKey) <> 21) and (Length(StrApiKey) <> 61) then
+      begin
+        Result := False;
+        MsgBox('Not a valid api key.', mbError, MB_OK);
+      end
+    end
+  end
+  else if CurrentPageID = wpFinished then
+  begin
+    StrApiKey := Trim(apiKeyPage.Values[0]);
+    if StrApiKey <> '' then
     begin
       DotCloudConfPath := UserDir('') + '\.dotcloud\' + 'dotcloud.conf';
       SaveStringToFile(DotCloudConfPath, '{' + #13#10, false);
       SaveStringToFile(DotCloudConfPath, '    "url": "https://api.dotcloud.com/", ' + #13#10, true);
-      SaveStringToFile(DotCloudConfPath, '    "apikey": "'+ apiKeyPage.Values[0] +'"' + #13#10, true);
+      SaveStringToFile(DotCloudConfPath, '    "apikey": "'+ StrApiKey +'"' + #13#10, true);
       SaveStringToFile(DotCloudConfPath, '}', true);
-    end;
-  end;
+    end
+  end
 end;
 
 function ModPathDir(): TArrayOfString;
