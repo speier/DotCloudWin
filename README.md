@@ -9,4 +9,4 @@ To build from source you need:
 * [Python](http://www.python.org) v2.7.1
 * [py2exe](http://www.py2exe.org) v0.6.9
 
-Then you can compile the installer using [Inno Setup](http://www.jrsoftware.org/isinfo.php).
+You can compile the installer using [Inno Setup](http://www.jrsoftware.org/isinfo.php).
