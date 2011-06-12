@@ -1,6 +1,6 @@
 ## DotCloud for Windows
 
-DotCloud for Windows is simple installer to setup DotCloud on Windows.
+DotCloud for Windows is a simple installer to setup [DotCloud](http://www.dotcloud.com)'s command-line client on Windows.
 
 [Download](http://s3.kalmanspeier.com/dotcloud/dotcloud-0.3.1.exe)
 
