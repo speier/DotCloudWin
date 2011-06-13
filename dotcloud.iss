@@ -1,7 +1,9 @@
+#define FilenameSuffix = ""; // "-" + GetDateTimeString('ddmmyyhhnn', '', '');
+
 [Setup]
 AppName=DotCloud for Windows
 AppVersion=0.3.1
-OutputBaseFilename=dotcloud-0.3.1
+OutputBaseFilename=dotcloud-0.3.1{#FilenameSuffix}
 OutputDir=setup
 DefaultDirName={pf}\DotCloud
 ChangesEnvironment=yes
@@ -44,9 +46,7 @@ end;
 
 function NextButtonClick(CurrentPageID: Integer) : Boolean;
 var
-  ResultCode: Integer;
   StrApiKey: String;
-  StrTemp: String;
   DotCloudConfPath: String;
 begin
   Result := True;
