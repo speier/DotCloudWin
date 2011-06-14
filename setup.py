@@ -5,9 +5,9 @@ import py2exe
    
 requiredFiles = ['dotcloud.pem']
 
-cygwinDir = os.path.join(os.path.abspath(os.curdir), 'cygwin')
-for file in os.listdir(cygwinDir):
-  path = os.path.join(cygwinDir, file)
+dependencies = os.path.join(os.path.abspath(os.curdir), 'dependencies')
+for file in os.listdir(dependencies):
+  path = os.path.join(dependencies, file)
   if os.path.isfile(path):
     requiredFiles.append(path)
 
