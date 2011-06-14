@@ -13,9 +13,13 @@ Name: modifypath; Description: "Add DotCloud's path to path environment variable
 
 [Files]
 Source: "bin\*"; DestDir: "{app}"; Flags: recursesubdirs;
+Source: "redist\vcredist_x86.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall;
 
 [Dirs]
 Name: "{code:UserDir}\.dotcloud"
+
+[Run]
+Filename: {tmp}\vcredist_x86.exe; Parameters: "/q:a /c:""msiexec /i vcredist.msi /qn"""; StatusMsg: "Installing Microsoft Visual C++ Redistributable Package";
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{code:UserDir}\.dotcloud"
