@@ -25,7 +25,7 @@ import platform
 from utils import die, info
 
 
-CONFIG_DIR = os.path.expanduser('~/.dotcloud')
+CONFIG_DIR = os.path.expanduser('~\.dotcloud')
 CONFIG_FILE = os.path.basename(os.environ.get('DOTCLOUD_CONFIG_FILE', 'dotcloud.conf'))
 CONFIG_PATH = os.path.join(CONFIG_DIR, CONFIG_FILE)
 if 'DOTCLOUD_CONFIG_FILE' in os.environ:
