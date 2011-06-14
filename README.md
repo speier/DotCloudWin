@@ -2,7 +2,7 @@
 
 Simple installer to setup [DotCloud](http://www.dotcloud.com)'s command-line client on Windows.
 
-[Download](http://s3.kalmanspeier.com/dotcloud/dotcloud-0.3.1.exe) *(Last updated: 12/06/2011 20:15 GMT)*
+[Download](http://s3.kalmanspeier.com/dotcloud/dotcloud-0.3.1.exe) *(Last updated: 14/06/2011 22:22 GMT)*
 
 To build from source you need:
 
