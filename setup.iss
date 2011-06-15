@@ -1,11 +1,12 @@
-#define FilenameSuffix = ""; // "-" + GetDateTimeString('ddmmyyhhnn', '', '');
-
 [Setup]
 AppName=DotCloud for Windows
 AppVersion=0.3.1
-OutputBaseFilename=dotcloud-0.3.1{#FilenameSuffix}
+OutputBaseFilename=dotcloud-0.3.1
 OutputDir=setup
 DefaultDirName={pf}\DotCloud
+DefaultGroupName=DotCloud
+UninstallDisplayIcon={app}\dotcloud.exe
+DisableProgramGroupPage=yes
 ChangesEnvironment=yes
 
 [Tasks]
@@ -14,6 +15,9 @@ Name: modifypath; Description: "Add DotCloud's path to path environment variable
 [Files]
 Source: "bin\*"; DestDir: "{app}"; Flags: recursesubdirs;
 Source: "redist\vcredist_x86.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall;
+
+[Icons]
+Name: "{group}\Uninstall DotCloud"; Filename: "{uninstallexe}"; WorkingDir: "{app}";
 
 [Dirs]
 Name: "{code:UserDir}\.dotcloud"

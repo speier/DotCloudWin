@@ -12,7 +12,12 @@ for file in os.listdir(cygwinFiles):
     requiredFiles.append(path)
 
 setup(
-  console = ['dotcloud.py'],
+  console = [
+    {
+      'script': 'dotcloud.py',
+      'icon_resources': [(1, 'dotcloud.ico')]
+    }
+  ],
   options = {'py2exe': {
     'dist_dir': 'bin',
     'optimize': 2,
