@@ -6,6 +6,7 @@ OutputDir=setup
 DefaultDirName={pf}\DotCloud
 DefaultGroupName=DotCloud
 UninstallDisplayIcon={app}\dotcloud.exe
+SetupIconFile=dotcloud.ico
 DisableProgramGroupPage=yes
 ChangesEnvironment=yes
 
@@ -17,6 +18,7 @@ Source: "bin\*"; DestDir: "{app}"; Flags: recursesubdirs;
 Source: "redist\vcredist_x86.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall;
 
 [Icons]
+Name: "{group}\DotCloud"; Filename: "cmd"; Parameters: "/K dotcloud.exe"; WorkingDir: "{app}"; IconFilename: "{app}\dotcloud.exe"
 Name: "{group}\Uninstall DotCloud"; Filename: "{uninstallexe}"; WorkingDir: "{app}";
 
 [Dirs]
