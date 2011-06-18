@@ -1,15 +1,14 @@
 @echo off
 
-echo Building DotCloud for Windows
+set currentdir=%CD%
+set dotcloudver=0.3.1
 
-cd dotcloud\0.3.1
+cd dotcloud\%dotcloudver%
 call build.cmd
 
-echo Building DotCloud for Windows Setup
-
-cd .
-
+cd %currentdir%
 PATH=%PATH%;C:\Program Files (x86)\Inno Setup 5
-iscc.exe setup.iss
+iscc.exe setup\setup.iss /dVERSION=%dotcloudver%
 
-pause
+cd dotcloud\%dotcloudver%
+rmdir bin /s /q

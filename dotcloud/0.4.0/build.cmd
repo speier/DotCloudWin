@@ -1,6 +1,5 @@
 @echo off
 
-echo Building DotCloud for Windows 0.4.0
-
+rmdir bin /s /q
 python setup.py py2exe
 rmdir build /s /q
