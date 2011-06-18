@@ -12,6 +12,7 @@ UninstallDisplayIcon={app}\dotcloud.exe
 SetupIconFile=..\dotcloud\dotcloud.ico
 DisableProgramGroupPage=yes
 ChangesEnvironment=yes
+OutputDir=..\bin
 
 [Tasks]
 Name: modifypath; Description: "Add DotCloud's folder to your system path (recommended)";
