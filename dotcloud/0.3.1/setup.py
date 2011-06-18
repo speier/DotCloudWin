@@ -3,9 +3,9 @@ import os
 from distutils.core import setup
 import py2exe
    
-requiredFiles = ['dotcloud.pem']
+requiredFiles = ['cli\\root_ca.pem']
 
-cygwinFiles = os.path.join(os.path.abspath(os.curdir), 'cygwin')
+cygwinFiles = os.path.join(os.path.abspath(os.curdir), '..\..\cygwin')
 for file in os.listdir(cygwinFiles):
   path = os.path.join(cygwinFiles, file)
   if os.path.isfile(path):
@@ -15,7 +15,7 @@ setup(
   console = [
     {
       'script': 'dotcloud.py',
-      'icon_resources': [(1, 'dotcloud.ico')]
+      'icon_resources': [(1, '..\dotcloud.ico')]
     }
   ],
   options = {'py2exe': {

@@ -1,21 +1,22 @@
+#define AppVersion "0.3.1"
+
 [Setup]
 AppName=DotCloud for Windows
-AppVersion=0.3.1
-OutputBaseFilename=dotcloud-0.3.1
-OutputDir=setup
+AppVersion={#AppVersion}
+OutputBaseFilename=dotcloud-{#AppVersion}
 DefaultDirName={pf}\DotCloud
 DefaultGroupName=DotCloud
 UninstallDisplayIcon={app}\dotcloud.exe
-SetupIconFile=dotcloud.ico
+SetupIconFile=..\dotcloud\dotcloud.ico
 DisableProgramGroupPage=yes
 ChangesEnvironment=yes
 
 [Tasks]
-Name: modifypath; Description: "Add DotCloud's path to path environment variable (recommended)";
+Name: modifypath; Description: "Add DotCloud's folder to your system path (recommended)";
 
 [Files]
-Source: "bin\*"; DestDir: "{app}"; Flags: recursesubdirs;
-Source: "redist\vcredist_x86.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall;
+Source: "..\dotcloud\{#AppVersion}\bin\*"; DestDir: "{app}"; Flags: recursesubdirs;
+Source: "..\redist\vcredist_x86.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall;
 
 [Icons]
 Name: "{group}\DotCloud"; Filename: "cmd"; Parameters: "/K dotcloud.exe"; WorkingDir: "{app}"; IconFilename: "{app}\dotcloud.exe"
