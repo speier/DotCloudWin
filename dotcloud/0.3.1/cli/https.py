@@ -45,7 +45,7 @@ class HTTPSConnection(httplib.HTTPSConnection):
         approot = os.path.dirname(__file__)
         if hasattr(sys, 'frozen'):
           approot = os.path.dirname(sys.executable)
-        ca_path = os.path.join(approot, 'dotcloud.pem')
+        ca_path = os.path.join(approot, 'root_ca.pem')
         try:
             self.sock = ssl.wrap_socket(sock, self.key_file, self.cert_file,
                     cert_reqs=ssl.CERT_REQUIRED,
