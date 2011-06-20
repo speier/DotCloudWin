@@ -1,0 +1,9 @@
+#!/bin/sh
+
+exec ssh \
+    -i ${DOTCLOUD_SSH_KEY} \
+    -o UserKnownHostsFile=/dev/null \
+    -o StrictHostKeyChecking=no \
+    -o ServerAliveInterval=10 \
+    -o PasswordAuthentication=no \
+    "$@"
