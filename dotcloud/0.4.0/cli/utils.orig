@@ -21,8 +21,12 @@
 import os
 import sys
 import re
+import platform
 from contextlib import contextmanager
 
+
+def is_windows():
+    return platform.system() == 'Windows'
 
 def die(msg):
     print >>sys.stderr, msg

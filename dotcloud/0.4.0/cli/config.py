@@ -19,11 +19,9 @@
 ## THE SOFTWARE.
 
 import os
-import platform
-
 import json
 
-from utils import die, info
+from utils import die, info, is_windows
 
 
 CONFIG_DIR = os.path.expanduser('~/.dotcloud')
@@ -83,8 +81,8 @@ def move_old_config():
         if 'DOTCLOUD_CONFIG_FILE' not in os.environ:
             data = data.replace('http://', 'https://')
         f.write(data)
-        if (platform.system() != 'Windows'):
-          os.fchmod(f.fileno(), 0600)
+        if not is_windows():
+            os.fchmod(f.fileno(), 0600)
     info('Migrated from {0}'.format(old_file))
     return True
 
@@ -101,5 +99,5 @@ def setup():
     conf['apikey'] = apikey
     with open(CONFIG_PATH, 'w') as f:
         json.dump(conf, f, indent=4)
-        if (platform.system() != 'Windows'):
-          os.fchmod(f.fileno(), 0600)
+        if not is_windows():
+            os.fchmod(f.fileno(), 0600)

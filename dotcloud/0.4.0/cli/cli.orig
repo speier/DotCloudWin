@@ -40,11 +40,31 @@ VERSION = '0.4.0'
 
 
 def hook_setup(cmd):
+    if '-h' in cmd: return
     config.setup()
     sys.exit(0)
 
 def hook_destroy(cmd):
+    if '-h' in cmd: return
     local.confirm('Please confirm destruction')
+
+def hook_push(cmd):
+    if '-h' in cmd or len(cmd) < 2:
+        return
+    if len(cmd) == 2:
+        cmd.append('.')
+    orig = dir = os.path.realpath(cmd[2])
+    while True:
+        if os.path.isdir(dir) and os.path.exists(os.path.join(dir, 'dotcloud.yml')):
+            if dir != orig:
+                utils.info('# Found dotcloud.yml: Using {0} as a base directory'.format(dir))
+            cmd[2] = dir
+            return
+        prev = dir
+        dir = os.path.realpath(os.path.join(dir, os.path.pardir))
+        if dir == prev:
+            local.confirm('Could not find dotcloud.yml file in {0} and parent directories. Proceed?'.format(orig))
+            break
 
 def hook___version(cmd):
     print 'DotCloud CLI version {0}'.format(VERSION)

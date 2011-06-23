@@ -1,8 +1,12 @@
 ## DotCloud for Windows
 
-Simple installer to setup [DotCloud](http://www.dotcloud.com)'s command-line client on Windows.
+Simple installer to setup [DotCloud](http://www.dotcloud.com) CLI (Command-Line Interface) on Windows.
+Including all prerequisites (Python, Cygwin, etc.) to run DotCloud on Windows.
 
-[Download](http://s3.kalmanspeier.com/dotcloud/dotcloud-0.3.1.exe) *(Last updated: 15/06/2011 21:40 GMT)*
+[Download v0.4.0](http://s3.kalmanspeier.com/dotcloud/dotcloud-0.4.0.exe) *(Last updated: 23/06/2011 22:35 GMT)*
+[Download v0.3.1](http://s3.kalmanspeier.com/dotcloud/dotcloud-0.3.1.exe) *(Last updated: 15/06/2011 21:40 GMT)*
+
+For more information read the official [docs](https://docs.dotcloud.com/#installation.html).
 
 To build from source you need:
 

@@ -19,7 +19,6 @@
 ## THE SOFTWARE.
 
 import os
-import sys
 import socket
 import ssl
 import httplib

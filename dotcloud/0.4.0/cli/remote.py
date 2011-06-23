@@ -19,8 +19,6 @@
 ## THE SOFTWARE.
 
 import os
-import platform
-
 import subprocess
 
 import utils
@@ -87,8 +85,8 @@ class Remote(object):
     def key(self, data):
         with open(config.CONFIG_KEY, 'w') as f:
             f.write(data)
-            if (platform.system() != 'Windows'):
-              os.fchmod(f.fileno(), 0600)
+            if not utils.is_windows():
+                os.fchmod(f.fileno(), 0600)
 
     def sftp(self):
         sftp = (
