@@ -3,7 +3,7 @@
 Simple installer to setup [DotCloud](http://www.dotcloud.com) CLI (Command-Line Interface) on Windows.  
 The setup includes all prerequisites (Python, Cygwin, etc.) to run DotCloud.
 
-#### [Download binaries](https://github.com/speier/DotCloudWin/archives/master)
+#### [Download binaries](https://github.com/speier/DotCloudWin/downloads)
 
 Alternatively you can download from Amazon S3:  
 [Download v0.4.0](http://s3.kalmanspeier.com/dotcloud/dotcloud-0.4.0.exe) *(Last updated: 23/06/2011 22:35 GMT)*  
