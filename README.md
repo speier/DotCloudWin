@@ -5,10 +5,6 @@ The setup includes all prerequisites (Python, Cygwin, etc.) to run DotCloud.
 
 #### [Download binaries](https://github.com/speier/DotCloudWin/downloads)
 
-Alternatively you can download from Amazon S3:  
-[Download v0.4.0](http://s3.kalmanspeier.com/dotcloud/dotcloud-0.4.0.exe) *(Last updated: 26/06/2011 12:55 GMT)*  
-[Download v0.3.1](http://s3.kalmanspeier.com/dotcloud/dotcloud-0.3.1.exe) *(Last updated: 15/06/2011 21:40 GMT)*
-
 For more information read the official [docs](https://docs.dotcloud.com/#installation.html).
 
 To build from source you need:

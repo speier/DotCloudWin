@@ -1,7 +1,7 @@
 @echo off
 
 set currentdir=%CD%
-set dotcloudver=0.4.0
+set dotcloudver=0.4.2
 
 cd dotcloud\%dotcloudver%
 call build.cmd
