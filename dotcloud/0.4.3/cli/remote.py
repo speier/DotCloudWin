@@ -32,7 +32,8 @@ class Remote(object):
         self._ssh_master = None
         self._ssh_options = (
                 'ssh', '-t',
-                '-i', "'" + config.CONFIG_KEY + "'",
+                '-i', config.CONFIG_KEY,
+                '-o', 'LogLevel=QUIET',
                 '-o', 'UserKnownHostsFile=/dev/null',
                 '-o', 'StrictHostKeyChecking=no',
                 '-o', 'PasswordAuthentication=no',
