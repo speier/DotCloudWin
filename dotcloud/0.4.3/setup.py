@@ -3,7 +3,7 @@ import os
 from distutils.core import setup
 import py2exe
    
-requiredFiles = ['cli\\root_ca.pem']
+requiredFiles = ['cli\\root_ca.pem', 'cli\\__dotcloud_git_ssh']
 
 cygwinFiles = os.path.join(os.path.abspath(os.curdir), '..\..\cygwin')
 for file in os.listdir(cygwinFiles):
